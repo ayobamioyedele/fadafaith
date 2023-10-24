@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DEVOTIONAL</title>
+  <style>
+    body {
+      background-color: grey;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    header img {
+      height: 40px;
+      width: auto;
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: brown;
+      height: 50px;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-left: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+    }
+
+    /* Content */
+    #content {
+      margin: 20px;
+    }
+
+    /* Footer */
+    footer {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0;
+  position: ;
+  bottom: 0;
+  width: 100%;
+}
+
+footer-content {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0;
+  position: ;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+}
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+
+    .navbar-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 10px; /* Adjust the right position as needed */
+    }
+
+    .navbar-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+
+    /* Media Query for Responsive Design */
+    @media screen and (max-width: 768px) {
+      .navbar ul {
+        display: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+        margin-top: 5px;
+      margin-right: 10px;
+    }
+      }
+
+      .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .navbar-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .navbar-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .navbar-toggle.active {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 999;
+      }
+
+      .navbar.active ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+      }
+
+      .navbar.active ul li {
+        margin: 10px;
+      }
+    } 100%;
+    }
+     .devotional {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: black;
+            margin: 10px;
+        }
+        p {
+            font-size: 18px;
+            color: black;
+            text-align: justify;
+        }
+        .scripture {
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      
+      <nav class="navbar">
+          
+          <div class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+          <img src="20231016_065724.png" alt="Web Logo"style="width: 40px; height: 40px;">
+          
+          <a href=""><img src="20231015_211018.jpg "  alt="Image 1" style="width: 40px; height: 40px;"></a> 
+          
+<p style="color:brown">j</p> <a href=""><img src="20231016_20624.jpg "  alt="Image 1" style="width: 40px; height: 40px;"></a> </center>
+ 
+ <a href="library.html"><img src="download_prev_ui.png "  alt="Image 1" style="width: 40px; height: 40px;"></a> </center><p style="color:brown">bbbbbbb</p>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <link rel="stylesheet" href="searchbox.css">
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Type keywords for topics">
+        <button id="search-button">Search</button>
+    </div>
+    
+    <div id="search-results" class="search-results"></div>
+    
+    <script>
+        const searchInput = document.getElementById("search-input");
+        const searchResults = document.getElementById("search-results");
+
+        // Sample data for demonstration
+        const sampleData = [
+          "FAITH IN CHRIST",
+            "Living the life of light",
+            "Peace",
+            "Living in peace with all ",
+        ];
+
+        searchInput.addEventListener("input", function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredResults = sampleData.filter(item => item.toLowerCase().includes(searchTerm));
+
+            displayResults(filteredResults);
+        });
+
+        function displayResults(results) {
+            searchResults.innerHTML = "";
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const resultItem = document.createElement("div");
+                    resultItem.textContent = result;
+                    searchResults.appendChild(resultItem);
+                });
+            } else {
+                searchResults.textContent = "No results found";
+            }
+        }
+    </script>
+</body>
+</html>
+    
+  <center>  </center>
+<br>
+<img src="20231014_185820.png" alt=""style="width: 340px; height: 100px;">
+
+<div class="devotional">
+       <center> <img src="20231014_193755.jpg" alt="TODAYS DEVOTIONAL"style=" height: 40px;"></center>
+        
+        
+    </div>
+<a href="contrasting sight.html"><img src="20231016_134038.jpg "  alt="Image 1" style="width: 360px; height: 280px; margin-left:0;"></a>
+             <p style="text-align:center; font-size:20px; font-weight:bold;">PRESS IMAGE TO GO <br>FOR DEVOTION</p>
+<h1>Previous Devotional Topics</h1>
+<a href=""style="text-decoration:none; font-weight:bold; color:black;"><img src="20231019_014530.jpg "  alt="Image 1" style="width: 80px; height: 80px;font-size:10px;">Help From God (Genesis 2:7)</a><br>
+<a href="livingthelifeoflight.html"style="text-decoration:none; font-weight:bold; color:black;"><img src="20231019_015446.jpg "  alt="Image 1" style="width: 80px; height:80px; font-size:10px;">Living The Life of Light (Matthew 5:16)</a><br>
+<a href="" style="text-decoration:none; font-weight:bold; color:black;"><img src="20231019_020557.jpg "  alt="Image 1" style="width: 80px; height: 80px;font-size:10px;"">Principles of Undeniable Prayer (Matthew 5:16)</a></p>
+<br>
+<br>
+        <link rel="stylesheet" type="text/css" href="welcomevideo.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <a href="contrasting sight.html"><img src="20231014_055431_0000.png "  alt="Image 1" style="width: 340px; height: 200px;"></a>
+            <p style="text-align:center; font-size:20px; font-weight:bold;">PRESS IMAGE TO EXPLORE BOOKS</p>
+        </div>
+        
+        <div class="mySlides fade">
+                        <a href="page2.html"><img src="20231014_055431_0000.png" alt="Image 2"style="width: 340px; height: 200px;"></a>
+            <p style="text-align:center; font-size:20px; font-weight:bold;">PRESS IMAGE TO EXPLORE BOOKS</p>
+        </div>
+        
+        <div class="mySlides fade">
+            <a href="page3.html"><img src="1697414565318.jpg" alt="Image 3"style="width: 340px; height: 200px;"></a>
+            <p style="text-align:center; font-size:20px; font-weight:bold;">PRESS IMAGE TO EXPLORE BOOKS</p>
+            
+        </div>
+    </div>
+
+    <script src="welcomevideo.js"></script>
+    <br>
+    <br>
+    
+  
+
+   <footer>
+    <div class="footer-content" style="font-size:10px; text-align: center;">
+      <div class="footer-nav">
+        <ul><a href="">Home</a>
+            <a href="">Devotional</a>
+        <a href="library.html">Library</a>
+        <a href="">Contact Us</a></ul>
+      </div>
+      <div class="social-icons">
+        <center><a href=""><img src="20231016_061552.png" alt="Facebook""></a>
+        <a href="#"><img src="20231016_054214.png" alt="WhatsApp"></a>
+        <a href="#"><img src="20231016_055510.png" alt="Instagram"></a></center>
+      </div>
+      <br>
+      <br>
+      <center>©fada faith Studios 2023</center>
+    </div>
+  </footer>
+  <script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

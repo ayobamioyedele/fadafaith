@@ -1,0 +1,22 @@
+.slideshow-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 ;
+}
+
+.mySlides {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.description {
+    text-align: center;
+    padding: 60px;
+    background:  #ffffff;
+    color: #ffffff;
+}
